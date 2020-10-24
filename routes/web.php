@@ -18,3 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('access_token', 'API\AccessTokenController@generate_token');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/video_chat', 'VideoChatController@index');
+Route::post('auth/video_chat', 'VideoChatController@auth');
+Route::get('teste', 'TesteController@index');
